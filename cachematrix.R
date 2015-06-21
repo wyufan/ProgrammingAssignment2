@@ -13,12 +13,12 @@
 
 makeCacheMatrix <- function(x = matrix()) {
                                   
-  i<- NULL                                           ## initiatize i(inverse) == NULL
+  i<- NULL                                           ## initialize i(inverse) == NULL
   setmatrix <- function(y) {                         ## set the value of the matrix
     x <<- y
     i <<- NULL
   }
-  getmatrix <- function() x                             ## set the value of the matrix
+  getmatrix <- function() x                             ## get the value of the matrix
   setinverse <- function(inverse) i <<- inverse         ## set the value of the inverse 
   getinverse <- function() i                           ## get the value of the inverse 
   list(setmatrix = setmatrix, getmatrix = getmatrix,   ## return a list 
@@ -42,7 +42,7 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   data <- x$getmatrix()
-  i <- solve(data, ...)     ## solve function is used to Compute the inverse of a square matrix in R
+  i <- solve(data, ...)     ## solve function is used to compute the inverse of a square matrix in R
   x$setinverse(i)
   i                         ## Return a matrix that is the inverse of 'x'
 }
